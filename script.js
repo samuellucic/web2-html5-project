@@ -39,11 +39,13 @@ class GameArea {
     // ukupno odigrano vrijeme
     const timeElapsed = new Date() - this.startTime;
     const localStorageTimeElapsed = getBestTimeFromLocalStorage();
+    // pohrana novog najboljeg vremena
     if (timeElapsed > localStorageTimeElapsed) {
       localStorage.setItem('bestTime', timeElapsed);
     }
   };
 
+  // ciscenje canvasa
   clear = () => {
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
   };
